@@ -1,4 +1,14 @@
-﻿from collections import deque
+﻿##로직
+- 2차원리스트에 여러 말들이 있을 경우 list로 관계를 나타냄
+- index번호가 빠르면 아래에 있는 말, graph[x][y] = [1,2,3]이라면 1번위에 2,3번말이 있는 것.
+ => 2번말이 움직이면 graph[x][y][1:]만 움직이면 됨
+- 매 순서마다 이동할 말 탐색 -> 이동할 위치 탐색(파란색+격자밖, 흰색, 빨간색 순) -> 이동 -> 관계 갱신
+
+##쟁점
+- 한칸에 여러 말이 위치할 때 이를 정의할 배열 필요
+
+
+from collections import deque
 n,k = map(int,input().split())
 #graph = [list(map(int,input().split())) for _ in range(n)]
 #chess = [list(map(int,input().split())) for _ in range(k)]
